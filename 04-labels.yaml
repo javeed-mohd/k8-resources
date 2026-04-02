@@ -1,0 +1,14 @@
+# Labels adds metadata to the resource, Selectors use labels to identify resources inside kubernetes.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: labels
+  # namespace: roboshop
+  labels:
+    project: roboshop
+    component: frontend
+    environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx
