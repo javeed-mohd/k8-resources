@@ -1,0 +1,19 @@
+# Resources are the objects you create and manage inside a cluster.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resources-demo
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      # Soft limit
+      requests:
+        memory: "64Mi"    # RAM
+        cpu: "100m"       # CPU
+      
+      # Hard limit
+      limits:
+        memory: "128Mi"    # RAM
+        cpu: "150m"        # CPU

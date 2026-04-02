@@ -1,0 +1,16 @@
+# Annotations are again like labels adds metadata, but annotations are used to select external resources (Load balancers).
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotations
+  labels:
+    project: roboshop
+    component: frontend
+    environment: dev
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+    jenkinsURL: "https://jenkins.joindevops.com/build/job/roboshop/34"
+spec:
+  containers:
+  - name: nginx
+    image: nginx
