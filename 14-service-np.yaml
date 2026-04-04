@@ -1,11 +1,11 @@
 # Service is an object that provides a stable network endpoint to access a group of Pods.
 # A service is a method for exposing a network application that is running on one or more Pods in your cluster.
-# By default, it will be acting as cluster ip.
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
+  name: nginx-np
 spec:
+  type: NodePort
   selector:
     # Labels are used as selectors.
     project: roboshop
@@ -14,4 +14,4 @@ spec:
   ports:
   - protocol: TCP
     port: 80          # Host/Service Port
-    targetPort: 80    # Container Port    
+    targetPort: 80    # Container Port  
