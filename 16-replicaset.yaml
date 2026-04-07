@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: nginx
-  # These labels are replicset labels reference
+  # These labels are replicaset labels reference
   labels:
     project: roboshop
     purpose: rs-demo
