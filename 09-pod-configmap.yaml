@@ -6,7 +6,7 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    # envFrom is used in a Pod spec to load all key–value pairs from a ConfigMap or Secret as environment variables into a container.
+    # envFrom is used in a Pod specifications to load all key–value pairs from a ConfigMap or Secret as environment variables into a container.
     envFrom:
     - configMapRef:
         name: nginx-config
