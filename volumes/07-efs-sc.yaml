@@ -9,3 +9,4 @@ parameters:
   fileSystemId: fs-0a74f07d59bf6910a        # Replace with your File System ID
   directoryPerms: "700"
   basePath: "/roboshop"
+reclaimPolicy: Retain
