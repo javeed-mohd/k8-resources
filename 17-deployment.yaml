@@ -10,7 +10,7 @@ metadata:
     tier: frontend
     component: frontend
   annotations:
-    kubernetes.io/change-cause: "Moving to 1.29.7"
+    kubernetes.io/change-cause: "Moving to 1.29.7"    # It will be used in 'kubectl rollout history'
 spec:
   replicas: 2
   selector:
@@ -23,6 +23,7 @@ spec:
   # This is Pod definition, Pod is subset of replicaset
   template:
     metadata:
+      # These MUST match the 'selector' labels specified above
       labels:
         project: roboshop
         purpose: rs-demo
