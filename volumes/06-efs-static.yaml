@@ -15,20 +15,20 @@ spec:
   csi:
     driver: efs.csi.aws.com
     volumeHandle: fs-0c4e63f768a948586       # Replace with your File System ID
-# ---
-# # PersistentVolumeClaim is claiming the PV that it needs storage.
-# apiVersion: v1
-# kind: PersistentVolumeClaim
-# metadata:
-#   name: efs-static
-# spec:
-#   storageClassName: ""        # Empty string must be explicitly set otherwise default StorageClass will be set
-#   # volumeName: efs-static    # This is the Persistent Volume name.    
-#   accessModes:
-#     - ReadWriteOnce
-#   resources:
-#     requests:
-#       storage: 5Gi
+---
+# PersistentVolumeClaim is claiming the PV that it needs storage.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: efs-static
+spec:
+  storageClassName: ""
+  # volumeName: efs-static    # This is the Persistent Volume name.    
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
 # ---
 # apiVersion: v1
 # kind: Pod
